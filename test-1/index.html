@@ -6,10 +6,42 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/mobile.css">
+    <link rel="stylesheet" href="styles/tablet.css">
+    <link rel="stylesheet" href="styles/tablet-769-1279.css">
+    <link rel="stylesheet" href="styles/reset.css">
+
 </head>
 <body>
+<div id="wrapper">
+    <h2>Test</h2>
+    <div class="form-container">
+        <form id="user-inputs">
+            <div class="name-value-input">
+                <label for="name-value">Name/Value Pair</label>
+                <input type="text" id="name-value" name="name-value-pair">
+            </div>
+            <input type="submit" value="Add">
+        </form>
+    </div>
 
+    <div id="output-container">
+        <div id="output-aria">
+            <p class="output-aria-title">Name/Value Pair List</p>
+            <div id="name-value-list">
+
+            </div>
+
+        </div>
+        <div id="output-buttons">
+            <button id="sort-by-names">Sort by Names</button>
+            <button id="sort-by-values">Sort by Values</button>
+            <button id="delete">Delete</button>
+        </div>
+
+    </div>
+</div>
 
 
 

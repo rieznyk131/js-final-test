@@ -1,0 +1,72 @@
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    #wrapper {
+        height: 95%;
+        width: 90%;
+    }
+
+    .form-container {
+        width: 100%;
+        height: 125px;
+    }
+
+    #user-inputs {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .name-value-input {
+        height: 100%;
+        width: 90%;
+    }
+
+    .name-value-input input[type='text'] {
+        width: 100%;
+        height: 50px;
+    }
+    .name-value-input label, .output-aria-title {
+        font-size: 20px;
+    }
+    .form-container input[type='submit'] {
+        width: 90px;
+        height: 40px;
+        margin-top: 0;
+        font-size: 20px;
+    }
+
+    #output-container {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    #output-aria {
+        width: 90%;
+    }
+
+    #name-value-list {
+        height: 90%
+    }
+
+    #output-buttons {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        width: 90%;
+        height: 120px;
+        padding-top: 0;
+    }
+
+    #output-buttons button {
+        font-size: 20px;
+        height: 44px;
+    }
+
+    #delete {
+        width: 150px;
+        margin-top: 20px;
+    }
+
+
+
+
+
+}
