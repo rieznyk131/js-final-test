@@ -22,10 +22,15 @@
 
     .name-value-input input[type='text'] {
         height: 45px;
+        padding: 5px;
+        font-size: 18px;
     }
 
     .name-value-input label, .output-aria-title {
-        font-size: 16px;
+        font-size: 18px;
+    }
+    .name-value-input input[type='text']::placeholder {
+        font-size: 18px;
     }
 
     .form-container input[type='submit'] {

@@ -24,12 +24,19 @@
     }
     .name-value-input input[type='text'] {
         height: 40px;
+        padding: 2px;
+        font-size: 18px;
     }
     .name-value-input label, .output-aria-title {
         font-size: 16px;
     }
 
-    .form-container input[type='submit'] {
+    .name-value-input input[type='text']::placeholder {
+        font-size: 16px;
+    }
+
+
+        .form-container input[type='submit'] {
         width: 150px;
         height: 44px;
         margin-top: 0;
