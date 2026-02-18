@@ -1,0 +1,17 @@
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    #container {
+        justify-content: center;
+        justify-items: center;
+        column-gap: 20px;
+    }
+    .user-item {
+        width: 300px;
+    }
+
+    .user-img {
+        width: 100px;
+    }
+    .user-item p {
+        font-size: 18px;
+    }
+}

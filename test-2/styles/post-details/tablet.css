@@ -1,0 +1,40 @@
+@media screen and (min-width: 481px) and (max-width: 768px) {
+
+    .navigation {
+        width: 95%;
+    }
+
+    #main-content {
+        width: 95%;
+        padding: 10px
+    }
+
+    #comments-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .comment-container {
+        width: 350px;
+    }
+
+}
+
+@media  screen and (min-width: 769px) and (max-width: 1024px) {
+    .navigation {
+        width: 95%;
+    }
+
+    #main-content {
+        width: 95%;
+        padding: 10px
+    }
+
+    #comments-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .comment-container {
+        width: 45vw;
+    }
+
+}

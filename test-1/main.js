@@ -20,7 +20,7 @@ nameValueInput.appendChild(errorMsg);
 
 function checkInput(input) {
 
-    if (!input.match(/^[a-zA-Z0-9]+\s*=\s*[a-zA-Z0-9]+$/g)) {
+    if (!input.match(/^[a-zA-Z0-9]+\s*=\s*[a-zA-Z0-9]+$/g) || input === '') {
         errorMsg.innerText = 'Please print name=value !'
         addBtn.disabled = true
 
@@ -100,6 +100,7 @@ inputForm.onsubmit = function (e) {
     showList(arrWithObj);
 
     userInput.value = '';
+    checkInput('');
 }
 
 sortByNameBtn.onclick = function (e) {

@@ -1,0 +1,25 @@
+@media screen and (max-width: 480px) {
+    #container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .user-item {
+        width: 350px;
+        height: 350px;
+    }
+
+    .user-img {
+        width: 130px;
+    }
+
+    .user-item p {
+        font-size: 20px;
+    }
+
+    button{
+        font-size: 20px;
+    }
+}

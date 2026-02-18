@@ -1,0 +1,41 @@
+@media screen and (max-width: 480px) {
+    .navigation {
+        width: 100%;
+    }
+
+    .main-container {
+        width: 100%;
+        padding: 15px
+    }
+
+    #user-details {
+        display: flex;
+        flex-direction: column;
+        width: 99%;
+        padding: 10px;
+    }
+
+    #user-details-list {
+        width: 95%;
+        font-size: 20px
+    }
+
+    .user-img {
+        width: 250px
+    }
+
+    #close-btn, #show-post-btn {
+        width: 90%;
+        height: 45px;
+        font-size: 18px;
+    }
+
+    #posts {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .post-details-btn {
+        height: 45px;
+    }
+
+}
