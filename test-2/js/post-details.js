@@ -22,13 +22,11 @@ let commentsWrapper = document.getElementById('comments-wrapper');
 
 document.title = `${post.title} - Post Details`;
 
-let comments = fetch('https://jsonplaceholder.typicode.com/comments')
+let comments = fetch(`https://jsonplaceholder.typicode.com/posts/${post.id}/comments`)
     .then(res => res.json())
     .then(comments => {
         for (let comment of comments) {
-            if (post.id === comment.postId) {
                 console.log(comment);
-
 
                 let commentContainer = document.createElement('div')
                 commentContainer.classList.add('comment-container');
@@ -80,5 +78,4 @@ let comments = fetch('https://jsonplaceholder.typicode.com/comments')
 
                 commentsWrapper.appendChild(commentContainer)
             }
-        }
     })

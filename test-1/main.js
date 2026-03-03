@@ -78,6 +78,24 @@ function selected(id) {
 
 }
 
+function sort(array, sortParam) {
+    array = [...array].sort((a,b) =>{
+        let valueA = sortParam(a)[0];
+        let valueB = sortParam(b)[0];
+        if (!isNaN(valueA) && !isNaN(valueB)) {
+            return Number(valueA) - Number(valueB);
+        }
+
+        return valueA.localeCompare(valueB);
+
+    })
+    showList(array)
+}
+
+
+window.onload = (e) => {
+    addBtn.disabled = true
+}
 
 userInput.oninput = (e) => {
     console.log(e.target.value);
@@ -103,29 +121,35 @@ inputForm.onsubmit = function (e) {
     checkInput('');
 }
 
+
+
 sortByNameBtn.onclick = function (e) {
-    arrWithObj = [...arrWithObj].sort((a, b) => {
-        const keyA = Object.keys(a)[0];
-        const keyB = Object.keys(b)[0];
-
-        return keyA.localeCompare(keyB);
-    });
-
-    showList(arrWithObj)
-
+    sort(arrWithObj, Object.keys)
 }
 
 sortByValueBtn.onclick = function (e) {
-    outputContainer.innerText = '';
-
-    arrWithObj = [...arrWithObj].sort((a, b) => {
-        const valueA = Object.values(a)[0];
-        const valueB = Object.values(b)[0];
-
-        return valueA.localeCompare(valueB);
-    });
-    showList(arrWithObj)
+    sort(arrWithObj, Object.values)
 }
+
+// sortByNameBtn.onclick = function (e) {
+    // arrWithObj = [...arrWithObj].sort((a, b) => {
+    //     const keyA = Object.keys(a)[0];
+    //     const keyB = Object.keys(b)[0];
+    //
+    //     return keyA.localeCompare(keyB);
+    // });
+// }
+
+// sortByValueBtn.onclick = function (e) {
+//     outputContainer.innerText = '';
+//     arrWithObj = [...arrWithObj].sort((a, b) => {
+//         const valueA = Object.values(a)[0];
+//         const valueB = Object.values(b)[0];
+//
+//         return valueA.localeCompare(valueB);
+//     });
+//     showList(arrWithObj)
+// }
 
 deleteBtn.onclick = function () {
     arrWithObj = arrWithObj.filter(elem => !elem.selected);

@@ -46,39 +46,70 @@ function renderObj(object, parent) {
 }
 
 function getPostsByUserId(userId) {
-    let posts = fetch('http://jsonplaceholder.typicode.com/posts')
+    fetch(`https://jsonplaceholder.typicode.com/users/${userId}/posts`)
         .then(res => res.json())
         .then(posts => {
+            postsAll.innerText = '';
 
-            for (let post of posts) {
-                if (userId === post.userId) {
-                    console.log(post);
+            for (const post of posts) {
+                const postElem = document.createElement('div');
+                postElem.classList.add('post-element');
 
+                const postTitle = document.createElement('p');
+                postTitle.innerText = post.title;
 
-                    let postElem = document.createElement('div');
-                    postElem.classList.add('post-element');
+                const postDetailsBtn = document.createElement('button');
+                postDetailsBtn.classList.add('post-details-btn');
+                postDetailsBtn.innerText = 'post details';
 
-                    let postTitle = document.createElement('p');
-                    postTitle.innerText = `${post.title}`;
+                postDetailsBtn.onclick = function () {
+                    localStorage.setItem('selectedPost', JSON.stringify(post));
+                    window.location.href = 'post-details.html';
+                };
 
-                    let postDetailsBtn = document.createElement('button');
-                    postDetailsBtn.classList.add('post-details-btn');
-                    postDetailsBtn.innerText = `post details`;
-
-                    postElem.append(postTitle, postDetailsBtn);
-
-                    postsAll.append(postElem);
-
-                    postDetailsBtn.onclick = function () {
-                        localStorage.setItem('selectedPost', JSON.stringify(post));
-                        window.location.href = 'post-details.html';
-
-                }
-
-                }
+                postElem.append(postTitle, postDetailsBtn);
+                postsAll.append(postElem);
             }
         })
+        .catch(err => {
+            console.error('Failed to load posts', err);
+        });
 }
+
+// function getPostsByUserId(userId) {
+//     let posts = fetch('http://jsonplaceholder.typicode.com/posts')
+//         .then(res => res.json())
+//         .then(posts => {
+//
+//             for (let post of posts) {
+//                 if (userId === post.userId) {
+//                     console.log(post);
+//
+//
+//                     let postElem = document.createElement('div');
+//                     postElem.classList.add('post-element');
+//
+//                     let postTitle = document.createElement('p');
+//                     postTitle.innerText = `${post.title}`;
+//
+//                     let postDetailsBtn = document.createElement('button');
+//                     postDetailsBtn.classList.add('post-details-btn');
+//                     postDetailsBtn.innerText = `post details`;
+//
+//                     postElem.append(postTitle, postDetailsBtn);
+//
+//                     postsAll.append(postElem);
+//
+//                     postDetailsBtn.onclick = function () {
+//                         localStorage.setItem('selectedPost', JSON.stringify(post));
+//                         window.location.href = 'post-details.html';
+//
+//                 }
+//
+//                 }
+//             }
+//         })
+// }
 
 renderObj(user, userinfoList)
 
